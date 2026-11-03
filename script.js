@@ -195,5 +195,19 @@ if (resetBtn) {
     });
 }
 
+// 6. ФУНКЦИЯ ДЛЯ СКРОЛЛА К КОЛОНКЕ (Мобильная навигация)
+function scrollToColumn(columnId) {
+    const column = document.getElementById(columnId).closest('.column');
+    if (column) {
+        column.scrollIntoView({ behavior: 'smooth', inline: 'center' });
+        
+        // Подсветка активной кнопки
+        document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+        if(event && event.currentTarget) {
+            event.currentTarget.classList.add('active');
+        }
+    }
+}
+
 // Запуск доски
 document.addEventListener('DOMContentLoaded', renderBoard);
