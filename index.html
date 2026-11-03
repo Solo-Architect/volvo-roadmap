@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap: Путь к Volvo FH16</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="bg-glow glow-1"></div>
+    <div class="bg-glow glow-2"></div>
+
+    <header class="top-panel">
+        <div class="header-left">
+            <h1><span class="truck">🚛</span> ROADMAP</h1>
+            <p class="subtitle">ПУТЬ К VOLVO</p>
+        </div>
+        
+        <div class="header-center">
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+            <p class="progress-text" id="progressText">Выполнено: 0 из 0 (0%)</p>
+        </div>
+
+        <div class="header-right">
+            <button class="reset-btn" id="resetBtn" title="Сбросить доску">🗑️ Сброс</button>
+            <button id="addTaskBtn" class="add-btn">+ Добавить задачу</button>
+        </div>
+    </header>
+
+    <main class="board">
+        <section class="column col-todo">
+            <div class="column-header">
+                <span class="header-title"><span class="icon">📋</span> Планы</span>
+                <span class="counter" id="count-todo">0</span>
+            </div>
+            <div class="task-list" id="list-todo"></div>
+        </section>
+
+        <section class="column col-progress">
+            <div class="column-header">
+                <span class="header-title"><span class="icon">⚙️</span> В процессе</span>
+                <span class="counter" id="count-progress">0</span>
+            </div>
+            <div class="task-list" id="list-progress"></div>
+        </section>
+
+        <section class="column col-done">
+            <div class="column-header">
+                <span class="header-title"><span class="icon">✅</span> Завершено</span>
+                <span class="counter" id="count-done">0</span>
+            </div>
+            <div class="task-list" id="list-done"></div>
+        </section>
+
+        <section class="column col-future">
+            <div class="column-header">
+                <span class="header-title"><span class="icon">🚀</span> Будущее</span>
+                <span class="counter" id="count-future">0</span>
+            </div>
+            <div class="task-list" id="list-future"></div>
+        </section>
+    </main>
+
+    <div id="taskModal" class="modal-overlay" style="display: none;">
+        <div class="modal-content">
+            <h2>Новая задача</h2>
+            <input type="text" id="modalTaskTitle" placeholder="Что нужно сделать?" autocomplete="off">
+            
+            <div class="modal-tags-select">
+                <p>Выберите категорию:</p>
+                <div class="tags-options">
+                    <label class="tag-option-label">
+                        <input type="radio" name="modalTag" value="dev" checked>
+                        <span class="tag-custom tag-dev">Разработка</span>
+                    </label>
+                    <label class="tag-option-label">
+                        <input type="radio" name="modalTag" value="learn">
+                        <span class="tag-custom tag-learn">Обучение</span>
+                    </label>
+                    <label class="tag-option-label">
+                        <input type="radio" name="modalTag" value="law">
+                        <span class="tag-custom tag-law">Юр. вопросы</span>
+                    </label>
+                    <label class="tag-option-label">
+                        <input type="radio" name="modalTag" value="none">
+                        <span class="tag-custom tag-none">Без тега</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button id="modalCancelBtn" class="modal-btn btn-secondary">Отмена</button>
+                <button id="modalSaveBtn" class="modal-btn btn-primary">Добавить</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
